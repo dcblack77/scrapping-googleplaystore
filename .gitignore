@@ -2,6 +2,8 @@
 
 # Files
 /xls
+*.xls
+*.xlsx
 
 # compiled output
 /dist
