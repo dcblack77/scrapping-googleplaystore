@@ -5,8 +5,8 @@ const fs = require('fs');
 //const writeStream = fs.createWriteStream('quotes.csv');
 
 
-
-async function just(link) {
+// Get Data from app page
+async function onlyScrap(link) {
     try {
         const $ = await request({
             uri: `https://play.google.com${link}`,
@@ -32,7 +32,9 @@ async function just(link) {
 }
 
 
-let app = async(req, res) => {
+
+// Get 50 first URL from Search page on Google Play Store and create xls file
+let scrap = async(req, res) => {
     try {
         const date = Date.now();
         const $ = await request({
@@ -44,7 +46,7 @@ let app = async(req, res) => {
         const data = await $('.ImZGtf').each(async(i, el) => {
             const link = $(el).find('a').attr('href');
 
-            datas.push(await just(link));
+            datas.push(await onlyScrap(link));
 
             let xls = json2xls(datas)
             let file = `xls/scrap-${date}.xlsx`
@@ -68,5 +70,5 @@ let app = async(req, res) => {
 }
 
 module.exports = {
-    app
+    scrap
 };
