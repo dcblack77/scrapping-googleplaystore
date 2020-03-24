@@ -5,6 +5,9 @@
 *.xls
 *.xlsx
 
+# Config
+configs/index.js
+
 # compiled output
 /dist
 /tmp
