@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node app",
-        "pm2": "pm2 kill all && pm2 start app.js --name scrap -i 0",
+        "pm2": "pm2 kill && pm2 start app.js --name scrap -i 0",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Diego Cabrera",
