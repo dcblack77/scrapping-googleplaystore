@@ -12,6 +12,9 @@ pipeline {
     }
      
     stage('Build') {
+        steps{
+            sh 'cp ./configs/index.example.js ./configs/index.js'
+        }
       steps {
         sh 'npm install'
       }
