@@ -21,7 +21,7 @@ pipeline {
             
     stage('Running') {
       steps {
-        sh 'node app'
+        sh 'node app &'
       }
     }
   }
