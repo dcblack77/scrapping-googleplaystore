@@ -13,7 +13,7 @@ async function onlyScrap(link) {
             transform: body => cheerio.load(body)
         });
         let information = $('.hAyfc')
-        return data = {
+        return scrapp = {
             title: $('.AHFaub span').text(),
             description: $('.DWPxHb').text(),
             update: information.find('.IQ1z0d .htlgb').html(),
